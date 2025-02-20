@@ -6,7 +6,7 @@ import { Calendar, Users, Award, School, Clock, Phone, ChevronLeft, ChevronRight
 import image1 from '../app/images/AdobeStock_1081500543_Preview.jpeg'
 import image2 from '../app/images/AdobeStock_21866514_Preview.jpeg'
 import image3 from '../app/images/AdobeStock_237290184_Preview.jpeg'
-import mascot from '../app/images/mascot.png'
+import mascot from '../app/images/vidmascot.gif'
 import logo from '../app/images/logotumbletown.png'
 
 import { Star, Heart, Smile } from 'lucide-react';
