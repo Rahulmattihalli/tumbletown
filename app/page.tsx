@@ -373,8 +373,8 @@ const TumbleTownB2B = () => {
       {/* Contact Section */}
       <div id="contact" className="bg-blue-600 text-white py-16">
         <div className="container mx-auto px-4 text-center">
-          <h2 className="text-3xl font-bold mb-8">Ready to Book Your School Visit?</h2>
-          <p className="text-xl mb-8">Contact our School Programs Coordinator today!</p>
+          <h2 className="text-3xl font-bold mb-8">Ready to Book Your Visit?</h2>
+          <p className="text-xl mb-8">Contact our Programs Coordinator today!</p>
           <div className="flex justify-center items-center space-x-2 mb-8">
             <Phone className="w-6 h-6" />
             <span className="text-xl">1-800-TUMBLE-TOWN</span>
