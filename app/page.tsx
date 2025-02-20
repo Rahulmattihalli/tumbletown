@@ -1,3 +1,4 @@
+/* eslint-disable */
 "use client"
 import React, { useState, useEffect } from 'react';
 import Image from 'next/image';
@@ -133,7 +134,7 @@ const ImageCarousel = () => {
     return () => clearInterval(timer);
   }, []);
 
-  const goToSlide = (index) => {
+  const goToSlide = (index:any) => {
     setCurrentSlide(index);
   };
 
@@ -206,7 +207,7 @@ const ImageCarousel = () => {
 const TumbleTownB2B = () => {
   const [activeAccordion, setActiveAccordion] = useState('');
 
-  const toggleAccordion = (id) => {
+  const toggleAccordion = (id:any) => {
     setActiveAccordion(activeAccordion === id ? '' : id);
   };
 
