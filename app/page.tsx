@@ -39,7 +39,7 @@ const MascotSection = () => {
           {/* Content Side */}
           <div className="md:w-1/2 text-center md:text-left">
             <h2 className="text-3xl font-bold mb-4 text-blue-600">
-              Meet Tumble the Tiger!
+              Meet Tumble the Doggy!
             </h2>
             <p className="text-xl mb-6 text-gray-700">
               Our friendly mascot who makes every visit special! Tumble loves to:
