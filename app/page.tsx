@@ -21,7 +21,7 @@ const MascotSection = () => {
             <div className="relative">
               <Image
                 src={mascot}
-                alt="Tumble the Doggy"
+                alt="Tumble the Toby"
                 className="rounded-full shadow-xl"
               />
               {/* Decorative Elements */}
