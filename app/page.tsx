@@ -7,6 +7,7 @@ import image1 from '../app/images/AdobeStock_1081500543_Preview.jpeg'
 import image2 from '../app/images/AdobeStock_21866514_Preview.jpeg'
 import image3 from '../app/images/AdobeStock_237290184_Preview.jpeg'
 import mascot from '../app/images/mascot.png'
+import logo from '../app/images/logotumbletown.png'
 
 import { Star, Heart, Smile } from 'lucide-react';
 
@@ -217,7 +218,14 @@ const TumbleTownB2B = () => {
       <nav className="bg-white shadow-sm">
         <div className="container mx-auto px-4">
           <div className="flex justify-between items-center h-16">
-            <div className="text-xl font-bold text-blue-600">Tumble Town</div>
+          <div className="flex items-center space-x-2">
+        <Image 
+          src={logo}
+          alt="Tumble Town Logo" 
+          className="w-8 h-8"
+        /> {/* Replace with your actual logo */}
+        <div className="text-xl font-bold text-blue-600">Tumble Town</div>
+      </div>
             <div className="hidden md:flex space-x-8">
               <a href="#programs" className="text-gray-600 hover:text-blue-600">Programs</a>
               <a href="#benefits" className="text-gray-600 hover:text-blue-600">Benefits</a>
