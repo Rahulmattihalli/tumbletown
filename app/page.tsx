@@ -9,7 +9,165 @@ import image3 from '../app/images/AdobeStock_237290184_Preview.jpeg'
 import mascot from '../app/images/vidmascot.gif'
 import logo from '../app/images/logotumbletown.png'
 
-import { Star, Heart, Smile } from 'lucide-react';
+import {  Heart, Smile } from 'lucide-react';
+
+import { Star,  Quote } from 'lucide-react';
+
+const ReviewsSection = () => {
+  const [currentIndex, setCurrentIndex] = useState(0);
+
+  const reviews = [
+    {
+      id: 1,
+      name: "Sarah Johnson",
+      role: "Primary School Teacher",
+      school: "Sunshine Elementary",
+      image: "/api/placeholder/64/64",
+      rating: 5,
+      text: "Our students had an amazing time at Tumble Town! The staff was incredibly attentive, and the activities were perfectly age-appropriate. The kids are still talking about Tumble the Doggy!"
+    },
+    {
+      id: 2,
+      name: "Michael Chen",
+      role: "School Principal",
+      school: "Oakridge Academy",
+      image: "/api/placeholder/64/64",
+      rating: 5,
+      text: "Excellent facility with top-notch safety measures. The educational value combined with physical activity makes it a perfect field trip destination. Their staff goes above and beyond!"
+    },
+    {
+      id: 3,
+      name: "Emily Rodriguez",
+      role: "PE Teacher",
+      school: "Greenwood School",
+      image: "/api/placeholder/64/64",
+      rating: 5,
+      text: "The structured activities and professional instruction were fantastic. It was great to see all students, regardless of their physical abilities, fully engaged and having fun."
+    }
+  ];
+
+  const nextReview = () => {
+    setCurrentIndex((prev) => (prev + 1) % reviews.length);
+  };
+
+  const prevReview = () => {
+    setCurrentIndex((prev) => (prev === 0 ? reviews.length - 1 : prev - 1));
+  };
+
+  useEffect(() => {
+    const timer = setInterval(nextReview, 8000);
+    return () => clearInterval(timer);
+  }, []);
+
+  return (
+    <div className="bg-blue-50 py-16">
+      <div className="container mx-auto px-4">
+        <div className="text-center mb-12">
+          <h2 className="text-3xl font-bold text-blue-600 mb-4">
+            What Schools Say About Us
+          </h2>
+          <p className="text-gray-600 text-lg">
+            Join hundreds of satisfied schools who've made Tumble Town their go-to field trip destination
+          </p>
+        </div>
+
+        {/* Reviews Carousel */}
+        <div className="relative max-w-4xl mx-auto">
+          <div className="overflow-hidden">
+            <div 
+              className="transition-transform duration-500 ease-in-out flex"
+              style={{ transform: `translateX(-${currentIndex * 100}%)` }}
+            >
+              {reviews.map((review) => (
+                <div 
+                  key={review.id}
+                  className="w-full flex-shrink-0 px-4"
+                >
+                  <div className="bg-white rounded-2xl shadow-xl p-8">
+                    <div className="flex items-start mb-6">
+                      <div className="relative">
+                        <Image 
+                          src={logo} 
+                          alt={review.name}
+                          className="w-16 h-16 rounded-full object-cover"
+                        />
+                        <Quote className="absolute -bottom-2 -right-2 w-6 h-6 text-blue-500 bg-white rounded-full" />
+                      </div>
+                      <div className="ml-4 flex-1">
+                        <h3 className="font-semibold text-lg">{review.name}</h3>
+                        <p className="text-gray-600">{review.role}</p>
+                        <p className="text-blue-600 font-medium">{review.school}</p>
+                      </div>
+                      <div className="flex space-x-1">
+                        {[...Array(review.rating)].map((_, i) => (
+                          <Star 
+                            key={i}
+                            className="w-5 h-5 text-yellow-400 fill-current"
+                          />
+                        ))}
+                      </div>
+                    </div>
+                    <p className="text-gray-700 italic">"{review.text}"</p>
+                  </div>
+                </div>
+              ))}
+            </div>
+          </div>
+
+          {/* Navigation Buttons */}
+          <button
+            onClick={prevReview}
+            className="absolute left-0 top-1/2 -translate-y-1/2 -translate-x-4 bg-white rounded-full p-2 shadow-lg hover:bg-gray-50 transition-colors"
+          >
+            <ChevronLeft className="w-6 h-6 text-blue-600" />
+          </button>
+          <button
+            onClick={nextReview}
+            className="absolute right-0 top-1/2 -translate-y-1/2 translate-x-4 bg-white rounded-full p-2 shadow-lg hover:bg-gray-50 transition-colors"
+          >
+            <ChevronRight className="w-6 h-6 text-blue-600" />
+          </button>
+
+          {/* Dots */}
+          <div className="flex justify-center space-x-2 mt-6">
+            {reviews.map((_, index) => (
+              <button
+                key={index}
+                onClick={() => setCurrentIndex(index)}
+                className={`w-2 h-2 rounded-full transition-all ${
+                  index === currentIndex ? 'bg-blue-600 w-4' : 'bg-blue-300'
+                }`}
+              />
+            ))}
+          </div>
+        </div>
+
+        {/* Stats */}
+        <div className="grid md:grid-cols-3 gap-8 mt-16">
+          <div className="bg-white rounded-lg p-6 text-center shadow-md">
+            <div className="text-3xl font-bold text-blue-600 mb-2">500+</div>
+            <div className="text-gray-600">School Visits</div>
+          </div>
+          <div className="bg-white rounded-lg p-6 text-center shadow-md">
+            <div className="text-3xl font-bold text-blue-600 mb-2">98%</div>
+            <div className="text-gray-600">Satisfaction Rate</div>
+          </div>
+          <div className="bg-white rounded-lg p-6 text-center shadow-md">
+            <div className="text-3xl font-bold text-blue-600 mb-2">15,000+</div>
+            <div className="text-gray-600">Happy Students</div>
+          </div>
+        </div>
+
+        {/* Call to Action */}
+        <div className="text-center mt-12">
+          <button className="bg-yellow-400 text-blue-900 px-8 py-3 rounded-lg font-semibold hover:bg-yellow-500 transition-colors">
+            Read More Reviews
+          </button>
+        </div>
+      </div>
+    </div>
+  );
+};
 
 const MascotSection = () => {
   return (
@@ -384,6 +542,7 @@ const TumbleTownB2B = () => {
           </button>
         </div>
       </div>
+      <ReviewsSection></ReviewsSection>
 
       {/* Footer */}
       <footer className="bg-gray-800 text-white py-8">
