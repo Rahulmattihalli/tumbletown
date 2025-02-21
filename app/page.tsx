@@ -24,7 +24,7 @@ const ReviewsSection = () => {
       school: "Sunshine Elementary",
       image: "/api/placeholder/64/64",
       rating: 5,
-      text: "Our students had an amazing time at Tumble Town! The staff was incredibly attentive, and the activities were perfectly age-appropriate. The kids are still talking about Tumble the Doggy!"
+      text: "Our students had an amazing time at Tumble Town! The staff was incredibly attentive, and the activities were perfectly age-appropriate. The kids are still talking about Tumble the Toby!"
     },
     {
       id: 2,
@@ -198,7 +198,7 @@ const MascotSection = () => {
           {/* Content Side */}
           <div className="md:w-1/2 text-center md:text-left">
             <h2 className="text-3xl font-bold mb-4 text-blue-600">
-              Meet Tumble the Doggy!
+              Meet Tumble the Toby!
             </h2>
             <p className="text-xl mb-6 text-gray-700">
               Our friendly mascot who makes every visit special! Tumble loves to:
