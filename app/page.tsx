@@ -8,7 +8,14 @@ import image2 from '../app/images/AdobeStock_21866514_Preview.jpeg'
 import image3 from '../app/images/AdobeStock_237290184_Preview.jpeg'
 import mascot from '../app/images/vidmascot.gif'
 import logo from '../app/images/logotumbletown.png'
-
+import { 
+  Facebook, 
+  Instagram, 
+  Twitter, 
+  Youtube,
+  Mail,
+  MapPin
+} from 'lucide-react';
 import {  Heart, Smile } from 'lucide-react';
 
 import { Star,  Quote } from 'lucide-react';
@@ -545,11 +552,115 @@ const TumbleTownB2B = () => {
       <ReviewsSection></ReviewsSection>
 
       {/* Footer */}
-      <footer className="bg-gray-800 text-white py-8">
-        <div className="container mx-auto px-4 text-center">
-          <p>© 2025 Tumble Town. All rights reserved.</p>
+      <footer className="bg-gray-800 text-white py-12">
+      <div className="container mx-auto px-4">
+        <div className="grid md:grid-cols-4 gap-8 mb-8">
+          {/* Company Info */}
+          <div className="text-center md:text-left">
+            <h3 className="font-bold text-lg mb-4">Tumble Town</h3>
+            <div className="flex flex-col space-y-2">
+              <div className="flex items-center justify-center md:justify-start">
+                <MapPin className="w-5 h-5 mr-2" />
+                <span>123 Play Street, Fun City</span>
+              </div>
+              <div className="flex items-center justify-center md:justify-start">
+                <Phone className="w-5 h-5 mr-2" />
+                <span>1-800-TUMBLE-TOWN</span>
+              </div>
+              <div className="flex items-center justify-center md:justify-start">
+                <Mail className="w-5 h-5 mr-2" />
+                <span>info@tumbletown.com</span>
+              </div>
+            </div>
+          </div>
+
+          {/* Quick Links */}
+          <div className="text-center md:text-left">
+            <h3 className="font-bold text-lg mb-4">Quick Links</h3>
+            <ul className="space-y-2">
+              <li><a href="#programs" className="hover:text-blue-400 transition-colors">Programs</a></li>
+              <li><a href="#benefits" className="hover:text-blue-400 transition-colors">Benefits</a></li>
+              <li><a href="#faq" className="hover:text-blue-400 transition-colors">FAQ</a></li>
+              <li><a href="#contact" className="hover:text-blue-400 transition-colors">Contact</a></li>
+            </ul>
+          </div>
+
+          {/* Operating Hours */}
+          <div className="text-center md:text-left">
+            <h3 className="font-bold text-lg mb-4">Hours</h3>
+            <ul className="space-y-2">
+              <li>Monday - Friday: 9AM - 6PM</li>
+              <li>Saturday: 10AM - 5PM</li>
+              <li>Sunday: Closed</li>
+            </ul>
+          </div>
+
+          {/* Social Media */}
+          <div className="text-center md:text-left">
+            <h3 className="font-bold text-lg mb-4">Follow Us</h3>
+            <div className="flex justify-center md:justify-start space-x-4">
+              <a 
+                href="https://facebook.com" 
+                target="_blank" 
+                rel="noopener noreferrer"
+                className="bg-blue-600 p-2 rounded-full hover:bg-blue-700 transition-colors"
+              >
+                <Facebook className="w-5 h-5" />
+              </a>
+              <a 
+                href="https://instagram.com" 
+                target="_blank" 
+                rel="noopener noreferrer"
+                className="bg-pink-600 p-2 rounded-full hover:bg-pink-700 transition-colors"
+              >
+                <Instagram className="w-5 h-5" />
+              </a>
+              <a 
+                href="https://twitter.com" 
+                target="_blank" 
+                rel="noopener noreferrer"
+                className="bg-blue-400 p-2 rounded-full hover:bg-blue-500 transition-colors"
+              >
+                <Twitter className="w-5 h-5" />
+              </a>
+              <a 
+                href="https://youtube.com" 
+                target="_blank" 
+                rel="noopener noreferrer"
+                className="bg-red-600 p-2 rounded-full hover:bg-red-700 transition-colors"
+              >
+                <Youtube className="w-5 h-5" />
+              </a>
+            </div>
+            <div className="mt-6">
+              <p className="text-sm text-gray-400">Sign up for our newsletter:</p>
+              <div className="flex mt-2">
+                <input 
+                  type="email" 
+                  placeholder="Enter your email" 
+                  className="px-4 py-2 rounded-l-lg w-full text-gray-800 focus:outline-none focus:ring-2 focus:ring-blue-500"
+                />
+                <button className="bg-blue-600 px-4 py-2 rounded-r-lg hover:bg-blue-700 transition-colors">
+                  Subscribe
+                </button>
+              </div>
+            </div>
+          </div>
         </div>
-      </footer>
+
+        {/* Bottom Bar */}
+        <div className="border-t border-gray-700 pt-8 mt-8">
+          <div className="flex flex-col md:flex-row justify-between items-center">
+            <p>© 2025 Tumble Town. All rights reserved.</p>
+            <div className="flex space-x-4 mt-4 md:mt-0">
+              <a href="#" className="text-sm hover:text-blue-400 transition-colors">Privacy Policy</a>
+              <a href="#" className="text-sm hover:text-blue-400 transition-colors">Terms of Service</a>
+              <a href="#" className="text-sm hover:text-blue-400 transition-colors">Cookie Policy</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </footer>
     </div>
   );
 };
